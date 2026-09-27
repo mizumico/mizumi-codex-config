@@ -1,0 +1,31 @@
+# Codex CLI configuration for Mizumi (https://mizumi.co)
+#
+# Copy this file to ~/.codex/config.toml
+# Requires Codex CLI >= 0.122 (wire_api = "responses" support).
+#
+# Get your API key at https://mizumi.co — new users get $3 free trial credit.
+# Landing page: https://mizumi.co/codex
+
+# Default model used when you run `codex` (override with `codex -m <model>`).
+model = "gpt-5.6-sol"
+model_provider = "mizumi"
+
+[model_providers.mizumi]
+name = "Mizumi"
+base_url = "https://api.mizumi.co/v1"
+env_key = "MIZUMI_API_KEY"
+wire_api = "responses"
+
+# ---------------------------------------------------------------------------
+# Switching models
+# ---------------------------------------------------------------------------
+# Any model from https://mizumi.co works — just change `model` above, e.g.:
+#
+#   model = "gpt-5.6-luna"              # OpenAI budget tier
+#   model = "gemini-3.1-pro-preview"    # Google Gemini, via the same provider
+#   model = "gemini-3.6-flash"          # Google Gemini, fast tier
+#
+# Or per session without editing this file:
+#
+#   codex -m gemini-3.6-flash
+# ---------------------------------------------------------------------------
